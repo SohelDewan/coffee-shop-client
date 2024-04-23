@@ -27,7 +27,6 @@ const AddCoffee = () => {
         .then(data=>{
             console.log(data);
         })
-
     }
   return (
     <div className="text-center bg-[#F4F3F0] p-8 lg:p-24">
