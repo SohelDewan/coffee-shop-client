@@ -33,6 +33,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                   });
                 console.log('Deleted successfully')
                 {
+                  // eslint-disable-next-line react/prop-types
                   const remaining = coffees.filter(cof=> cof._id !==_id);
                   setCoffees(remaining);
                 }
