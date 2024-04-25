@@ -48,8 +48,8 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
       <figure>
         <img src={photo} />
       </figure>
-      <div className="flex justify-between w-full px-4">
-        <div className="ml-3 p-4">
+      <div className="flex justify-between w-full lg:px-4">
+        <div className="lg:ml-3 p-2 lg:p-4">
           <h2 className="card-title">{name}</h2>
           <p>{quantity}</p>
           <p>{supplier}</p>
@@ -57,12 +57,12 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
           <p>{category}</p>
           <p>{details}</p>
         </div>
-        <div className="join join-vertical space-y-2 pt-2 ">
+        <div className="join join-vertical space-y-2 pt-3 pr-1 lg:pt-2 ">
           <button className="btn join-item bg-green-600 text-white">
             View
           </button>
         <Link to={`updateCoffee/${_id}`}>
-        <button className="btn join-item bg-purple-600 text-white">
+        <button className="btn w-20 join-item bg-purple-600 text-white">
             Edit
           </button>
         </Link>

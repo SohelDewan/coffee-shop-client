@@ -40,7 +40,8 @@ const UpdateCoffee = () => {
                     showCancelButton: true,
                     confirmButtonText: "Save",
                     denyButtonText: `Don't save`
-                  }).then((result) => {
+                  })
+                  .then((result) => {
                     /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
                       Swal.fire("Saved!", "", "success");

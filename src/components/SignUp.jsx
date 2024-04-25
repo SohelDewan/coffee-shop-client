@@ -7,6 +7,7 @@ const SignUp = () => {
     const {createUser} = useContext(AuthContext)
 
     const handleSignUp = (e) => {
+
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
@@ -15,19 +16,31 @@ const SignUp = () => {
         createUser(email, password)
         .then(result=> {
              console.log(result);
+             // new user has been created
+             const user = {email};
+             fetch('http://localhost:5000/user',{
+               method: 'POST',
+               headers: {
+                   'content-type': 'application/json'
+               },
+               body: JSON.stringify(user)
+             })
+             .then(res=> res.json())
+             .then(data=>{
+              console.log(data);
+             })
         })
         .catch(error=>{
-             console.log(error);
- 
+             console.log(error); 
         })
+        form.reset();
     }
 
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">SignUp now!</h1>
-        
+          <h1 className="text-5xl font-bold">SignUp now!</h1>       
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleSignUp} className="card-body">
